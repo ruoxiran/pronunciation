@@ -9,7 +9,14 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
-     
+      - uses: w3c/spec-prod@v2
+          with:
+            SOURCE: explainer/index.html
+            DESTINATION: explainer/index.html
+            TOOLCHAIN: respec
+            GH_PAGES_BRANCH: gh-pages
+            VALIDATE_WEBIDL: false
+            VALIDATE_MARKUP: false
       - uses: w3c/spec-prod@v2
         with:
           SOURCE: gap-analysis_and_use-case
@@ -43,11 +50,4 @@ jobs:
           GH_PAGES_BRANCH: gh-pages
           VALIDATE_WEBIDL: false
           VALIDATE_MARKUP: false
-      - uses: w3c/spec-prod@v2
-        with:
-          SOURCE: explainer/index.html
-          DESTINATION: explainer/index.html
-          TOOLCHAIN: respec
-          GH_PAGES_BRANCH: gh-pages
-          VALIDATE_WEBIDL: false
-          VALIDATE_MARKUP: false
+      
