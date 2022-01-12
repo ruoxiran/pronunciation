@@ -16,6 +16,7 @@ jobs:
           DESTINATION: gap-analysis_and_use-case/index.html
           TOOLCHAIN: respec
           GH_PAGES_BRANCH: gh-pages
+          VALIDATE_WEBIDL: false
           VALIDATE_MARKUP: false
       - uses: w3c/spec-prod@v2
         with:
@@ -23,6 +24,7 @@ jobs:
           DESTINATION: technical-approach/index.html
           TOOLCHAIN: respec
           GH_PAGES_BRANCH: gh-pages
+          VALIDATE_WEBIDL: false
           VALIDATE_MARKUP: false
       - uses: w3c/spec-prod@v2
         with:
@@ -30,6 +32,7 @@ jobs:
           DESTINATION: samples/index.html
           TOOLCHAIN: respec
           GH_PAGES_BRANCH: gh-pages
+          VALIDATE_WEBIDL: false
           VALIDATE_MARKUP: false
 
       - uses: w3c/spec-prod@v2
@@ -38,6 +41,7 @@ jobs:
           DESTINATION: user-scenarios/index.html
           TOOLCHAIN: respec
           GH_PAGES_BRANCH: gh-pages
+          VALIDATE_WEBIDL: false
           VALIDATE_MARKUP: false
       - uses: w3c/spec-prod@v2
         with:
@@ -45,4 +49,5 @@ jobs:
           DESTINATION: explainer/index.html
           TOOLCHAIN: respec
           GH_PAGES_BRANCH: gh-pages
+          VALIDATE_WEBIDL: false
           VALIDATE_MARKUP: false
