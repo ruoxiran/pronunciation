@@ -11,15 +11,16 @@ jobs:
       max-parallel: 1
       matrix:
         include:
-          - source: index.html
+          - source: technical-approach
 
-          - source: content
+          - source: explainer
 
-          - source: help
+          - source: gap-analysis_and_use-case
 
-          - source: tools
+          - source: user-scenarios
 
-          - source: requirements
+          - source: samples
+          
             # destination defaults to spec-2/index.html
             # echidna_token defaults to no publication to w3.org/TR
     steps:
