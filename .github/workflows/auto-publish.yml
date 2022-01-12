@@ -7,28 +7,41 @@ jobs:
   main:
     name: Build, Validate and Deploy
     runs-on: ubuntu-20.04
-    strategy:
-      max-parallel: 1
-      matrix:
-        include:
-          - source: technical-approach
-
-          - source: explainer
-
-          - source: gap-analysis_and_use-case
-
-          - source: user-scenarios
-
-          - source: samples
-          
-            # destination defaults to spec-2/index.html
-            # echidna_token defaults to no publication to w3.org/TR
     steps:
       - uses: actions/checkout@v2
       - uses: w3c/spec-prod@v2
         with:
-          SOURCE: ${{ matrix.source }}
-          DESTINATION: ${{ matrix.destination }}
+          SOURCE: explainer/index.html
+          DESTINATION: explainer/index.html
+          TOOLCHAIN: respec
           GH_PAGES_BRANCH: gh-pages
-          W3C_ECHIDNA_TOKEN: ${{ secrets[matrix.echidna_token] }}
-        
+          VALIDATE_MARKUP: false
+      - uses: w3c/spec-prod@v2
+        with:
+          SOURCE: gap-analysis_and_use-case/index.html
+          DESTINATION: gap-analysis_and_use-case/index.html
+          TOOLCHAIN: respec
+          GH_PAGES_BRANCH: gh-pages
+          VALIDATE_MARKUP: false
+      - uses: w3c/spec-prod@v2
+        with:
+          SOURCE: technical-approach/index.html
+          DESTINATION: technical-approach/index.html
+          TOOLCHAIN: respec
+          GH_PAGES_BRANCH: gh-pages
+          VALIDATE_MARKUP: false
+      - uses: w3c/spec-prod@v2
+        with:
+          SOURCE: samples/index.html
+          DESTINATION: samples/index.html
+          TOOLCHAIN: respec
+          GH_PAGES_BRANCH: gh-pages
+          VALIDATE_MARKUP: false
+
+      - uses: w3c/spec-prod@v2
+        with:
+          SOURCE: user-scenarios/index.html
+          DESTINATION: user-scenarios/index.html
+          TOOLCHAIN: respec
+          GH_PAGES_BRANCH: gh-pages
+          VALIDATE_MARKUP: false
