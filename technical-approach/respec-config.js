@@ -95,7 +95,7 @@ var respecConfig = {
     maxTocLevel: 3,
 
    // WG info
-   group: 83907
+   group: "apa"
 
     // Spec URLs
 
